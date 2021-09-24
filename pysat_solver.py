@@ -1,0 +1,13 @@
+from pysat.solvers import Glucose3
+g = Glucose3() 
+# g.append_formula(a)
+g.add_clause([1])
+g.add_clause([1,2,3])
+g.add_clause([-1,-2,3])
+g.add_clause([1,-2,-3])
+g.add_clause([-1,2,-3])
+g.add_clause([-1,-2,-3])
+# g.add_clause([2])
+# g.add_clause([-2])
+print(g.solve())
+print(g.get_model())
